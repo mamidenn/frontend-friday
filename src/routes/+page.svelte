@@ -4,7 +4,7 @@
 
 <h1 class="text-4xl font-bold">Welcome to SvelteKit</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<button class="border-2 border-black px-4 font-medium shadow-md rounded-md" on:click={increment}>
+<button class="rounded-md border-2 border-black px-4 font-medium shadow-md" on:click={increment}>
 	Click me!
 </button>
 <p>Button clicked <span class="font-medium">{$counter}</span> times.</p>
