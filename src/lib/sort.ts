@@ -23,6 +23,6 @@ function sortInternal<T>(
 	return array;
 }
 
-export function sort<T>(array: T[]): T[] {
+export function sort<T extends number>(array: T[]): T[] {
 	return sortInternal([...array], 0, array.length, (a, b) => a < b);
 }
