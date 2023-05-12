@@ -1,38 +1,33 @@
-# create-svelte
+# Frontend Mentor - Profile card component
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![Design preview for the Profile card component coding challenge](./design/desktop-preview.jpg)
 
-## Creating a project
+## Welcome! 👋
 
-If you're seeing this, you've probably already done this step. Congrats!
+Thanks for checking out this front-end coding challenge.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+**To do this challenge, you need a basic understanding of HTML and CSS.**
 
-## Developing
+## The challenge
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Your challenge is to build out this profile card component and get it looking as close to the design as possible.
 
-```bash
-npm run dev
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
 
-## Building
+## Where to find everything
 
-To create a production version of your app:
+Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
 
-```bash
-npm run build
-```
+The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
 
-You can preview the production build with `npm run preview`.
+If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+You will find all the required assets in the `/static` folder. The assets are already optimized.
+
+There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+
+**Have fun building!** 🚀
