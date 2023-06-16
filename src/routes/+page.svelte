@@ -6,7 +6,7 @@
 		<div class="flex flex-col">
 			<img alt="hero" src="/illustration-hero.svg" />
 		</div>
-		<div>
+		<div class="flex flex-col justify-center text-center">
 			<h1>Order Summary</h1>
 			<p>
 				You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you
@@ -20,8 +20,10 @@
 				</div>
 				<a href="www.google.de">Change</a>
 			</div>
-			<button>Proceed to Payment</button>
-			<button>Cancel Order</button>
+			<button class="block rounded-md bg-primary-bright-blue text-neutral-very-pale-blue"
+				>Proceed to Payment</button
+			>
+			<button class="block">Cancel Order</button>
 		</div>
 	</div>
 </div>
