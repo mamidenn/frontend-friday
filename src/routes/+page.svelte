@@ -12,6 +12,12 @@
 				You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you
 				like!
 			</p>
+			<div class="flex">
+				<img alt="icon" src="/icon-music.svg" />
+				<h2>Annual Plan</h2>
+				<h3>$59.59/year</h3>
+				<a href="www.google.de">Change</a>
+			</div>
 		</div>
 	</div>
 </div>
