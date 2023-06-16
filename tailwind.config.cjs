@@ -6,6 +6,8 @@ const config = {
 		extend: {},
 		// presets from design/style-guide.md
 		colors: {
+			white: 'hsl(0 0% 100%)',
+			black: 'hsl(0 0% 0%)',
 			primary: {
 				'pale-blue': 'hsl(225 100% 94%)',
 				'bright-blue': 'hsl(245 75% 52%)'
@@ -17,8 +19,8 @@ const config = {
 			}
 		},
 		fontFamily: {
-			"sans": ['"Red Hat Display"', "sans-serif"]
-		},		
+			sans: ['"Red Hat Display"', 'sans-serif']
+		},
 		fontWeight: {
 			500: 500,
 			700: 700,
