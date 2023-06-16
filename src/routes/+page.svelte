@@ -3,7 +3,7 @@
 
 <div class="grid min-h-screen place-items-center">
 	<div>
-		<div>
+		<div class="flex flex-col">
 			<img alt="hero" src="/illustration-hero.svg" />
 		</div>
 		<div>
@@ -14,10 +14,14 @@
 			</p>
 			<div class="flex">
 				<img alt="icon" src="/icon-music.svg" />
-				<h2>Annual Plan</h2>
-				<h3>$59.59/year</h3>
+				<div>
+					<h2>Annual Plan</h2>
+					<h3>$59.59/year</h3>
+				</div>
 				<a href="www.google.de">Change</a>
 			</div>
+			<button>Proceed to Payment</button>
+			<button>Cancel Order</button>
 		</div>
 	</div>
 </div>
