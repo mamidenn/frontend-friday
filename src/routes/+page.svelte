@@ -1,10 +1,10 @@
 <script lang="ts">
 </script>
 
-<div class="grid min-h-screen place-items-center">
-	<div class="w-[450px]">
+<div class="grid min-h-screen place-items-center bg-primary-pale-blue">
+	<div class="w-[450px] overflow-hidden rounded-2xl bg-white">
 		<img alt="hero" src="/illustration-hero.svg" />
-		<div class="flex flex-col gap-5 text-center">
+		<div class="flex flex-col gap-5 p-10 text-center">
 			<h1>Order Summary</h1>
 			<p>
 				You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you
