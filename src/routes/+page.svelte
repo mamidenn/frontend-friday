@@ -2,15 +2,15 @@
 </script>
 
 <div class="grid min-h-screen place-items-center bg-primary-pale-blue">
-	<div class="w-[450px] overflow-hidden rounded-2xl bg-white">
+	<div class="w-[450px] overflow-hidden rounded-2xl bg-white shadow-lg">
 		<img alt="hero" src="/illustration-hero.svg" />
-		<div class="flex flex-col gap-5 p-10 text-center">
+		<div class="flex flex-col gap-9 p-10 text-center">
 			<h1 class="text-2xl font-900">Order Summary</h1>
-			<p>
+			<p class="px-3 text-neutral-desaturated-blue">
 				You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you
 				like!
 			</p>
-			<div class="flex items-center gap-5 rounded-md bg-neutral-desaturated-blue p-5">
+			<div class="flex items-center gap-5 rounded-md bg-neutral-very-pale-blue p-5">
 				<img alt="icon" src="/icon-music.svg" />
 				<div>
 					<div class="font-900">Annual Plan</div>
