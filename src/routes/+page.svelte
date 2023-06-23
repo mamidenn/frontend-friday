@@ -1,7 +1,9 @@
 <script lang="ts">
 </script>
 
-<div class="grid min-h-screen place-items-center bg-primary-pale-blue bg-[url('/pattern-background-desktop.svg')] bg-no-repeat bg-repeat-x">
+<div
+	class="bg:cover grid min-h-screen place-items-center bg-primary-pale-blue bg-[url('/pattern-background-desktop.svg')] bg-contain bg-no-repeat"
+>
 	<div class="w-[450px] overflow-hidden rounded-2xl bg-white shadow-lg">
 		<img alt="hero" src="/illustration-hero.svg" />
 		<div class="flex flex-col gap-9 p-10 text-center">
@@ -23,7 +25,7 @@
 			>
 				Proceed to Payment
 			</button>
-			<button>Cancel Order</button>
+			<button class="font-900 text-neutral-desaturated-blue">Cancel Order</button>
 		</div>
 	</div>
 </div>
