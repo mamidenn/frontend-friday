@@ -7,7 +7,7 @@
 	}
 </script>
 
-{#await fetch("https://restcountries.com/v3.1/all?fields=name")}
+{#await await(await fetch("https://restcountries.com/v3.1/all?fields=name")).json()}
 {:then data}
 <p>{data}</p>
 {:catch}
