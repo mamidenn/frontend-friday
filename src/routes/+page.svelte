@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { counter, increment } from '../lib/counter';
+
+	let name = fetch("https://restcountries.com/v3.1/all?fields=name")
+
+	name.
 </script>
 
 <h1 class="text-4xl font-bold">Welcome to SvelteKit</h1>
@@ -8,6 +12,9 @@
 	Click me!
 </button>
 <p>Button clicked <span class="font-medium">{$counter}</span> times.</p>
+
+{#await}
+{/await}
 
 <style>
 </style>
