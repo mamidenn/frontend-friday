@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { json } from '@sveltejs/kit';
 	import { counter, increment } from '../lib/counter';
 
 	let name;
@@ -7,9 +8,10 @@
 	}
 </script>
 
-{#await await(await fetch("https://restcountries.com/v3.1/all?fields=name")).json()}
+{#await  fetch("https://restcountries.com/v3.1/all?fields=name").then(result => result.json())}
 {:then data}
-<p>{data}</p>
+<p>{data[0]}</p>
+<p>{JSON.stringify(data)}</p>
 {:catch}
 {/await}
 
