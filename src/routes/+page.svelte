@@ -11,13 +11,20 @@
 
 	let allCountries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all?fields=name,flags').then( (result) => result.json());
 
-	let selectedCountry = null;
+	let selectedCountry :Country;
 	let additionalInfoVisible=false;
 	function handleClick(country : Country) 
 	{
 		return function(){
 			additionalInfoVisible = !additionalInfoVisible;
+			if (additionalInfoVisible){
+				selectedCountry = country;
+			}
 		}
+	}
+
+	function handleReturn(){
+		additionalInfoVisible = false;
 	}
 
 	async function filterCountries(filter: string)
@@ -39,7 +46,11 @@
 	<div>
 		<div>
 			{#if additionalInfoVisible}
-
+			<div class="py-2">
+				<p class="text-2xl">{selectedCountry.name.common}</p>
+				<p class="text-m">({selectedCountry.name.official})</p>
+				<button on:click="{handleReturn}">hallo</button>
+			</div>
 			{:else}
 			{#await countries then data}
 				<ul class="list-inside">
