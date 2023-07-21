@@ -11,10 +11,13 @@
 
 	let allCountries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all?fields=name,flags').then( (result) => result.json());
 
+	let selectedCountry = null;
 	let additionalInfoVisible=false;
-	function handleClick() 
+	function handleClick(country : Country) 
 	{
-		additionalInfoVisible = !additionalInfoVisible;
+		return function(){
+			additionalInfoVisible = !additionalInfoVisible;
+		}
 	}
 
 	async function filterCountries(filter: string)
@@ -35,6 +38,9 @@
 <div class="p-6 max-w-3xl mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4 my-7">
 	<div>
 		<div>
+			{#if additionalInfoVisible}
+
+			{:else}
 			{#await countries then data}
 				<ul class="list-inside">
 					{#each data as country}
@@ -44,12 +50,13 @@
 								<p class="text-m">({country.name.official})</p>
 							</div>
 							<div class="py-2">
-								<img on:click={handleClick} class="px-56" src={country.flags.png} alt=""/>
+								<img on:click={handleClick(country)} class="px-56" src={country.flags.png} alt=""/>
 							</div>
 						</li>
 					{/each}
 				</ul>
 			{/await}
+			{/if}
 		</div>
 	</div>
 </div>
