@@ -10,9 +10,11 @@
 	}
 
 	let allCountries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all?fields=name,flags').then( (result) => result.json());
-	
-	function handleClick() {
-		alert("clicked")
+
+	let additionalInfoVisible=false;
+	function handleClick() 
+	{
+		additionalInfoVisible = !additionalInfoVisible;
 	}
 
 	async function filterCountries(filter: string)
