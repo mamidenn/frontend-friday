@@ -9,10 +9,12 @@
 		}
 	}
 
+	let countries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all?fields=name,flags').then( (result) => result.json());
+	
 	async function getData(filter: string)
 	{
-		let countries : Country[] = await fetch('https://restcountries.com/v3.1/all?fields=name,flags').then( (result) => result.json());
-		return countries.filter(country => country.name.common.toLowerCase().includes(filter.toLowerCase()));
+		let x = await countries;
+		return x.filter(country => country.name.common.toLowerCase().includes(filter.toLowerCase()));
 	}
 	let filter = "";
 	$: countries = getData(filter)
