@@ -11,6 +11,10 @@
 
 	let allCountries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all?fields=name,flags').then( (result) => result.json());
 	
+	function handleClick() {
+		alert("clicked")
+	}
+
 	async function filterCountries(filter: string)
 	{		
 		return (await allCountries).filter(country => country.name.common.toLowerCase().includes(filter.toLowerCase()));
@@ -38,9 +42,8 @@
 								<p class="text-m">({country.name.official})</p>
 							</div>
 							<div class="py-2">
-								<img class="px-56" src={country.flags.png} alt=""/>
+								<img on:click={handleClick} class="px-56" src={country.flags.png} alt=""/>
 							</div>
-							
 						</li>
 					{/each}
 				</ul>
