@@ -7,16 +7,19 @@
 		flags: {
 			png: string
 		}
+		capital: {
+
+		}
 	}
 
-	let allCountries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all?fields=name,flags').then( (result) => result.json());
+	let allCountries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all').then( (result) => result.json());
 
 	let selectedCountry :Country;
 	let additionalInfoVisible=false;
-	function handleClick(country : Country) 
+	function handleAdditionalInformation(country : Country) 
 	{
 		return function(){
-			additionalInfoVisible = !additionalInfoVisible;
+			additionalInfoVisible = true;
 			if (additionalInfoVisible){
 				selectedCountry = country;
 			}
@@ -49,7 +52,8 @@
 			<div class="py-2">
 				<p class="text-2xl">{selectedCountry.name.common}</p>
 				<p class="text-m">({selectedCountry.name.official})</p>
-				<button on:click="{handleReturn}">hallo</button>
+				<p class="text-m">Capital: {selectedCountry.capital}</p>
+				<button on:click="{handleReturn}">Return to overview</button>
 			</div>
 			{:else}
 			{#await countries then data}
@@ -61,7 +65,7 @@
 								<p class="text-m">({country.name.official})</p>
 							</div>
 							<div class="py-2">
-								<img on:click={handleClick(country)} class="px-56" src={country.flags.png} alt=""/>
+								<img on:click={handleAdditionalInformation(country)} class="px-56" src={country.flags.png} alt=""/>
 							</div>
 						</li>
 					{/each}
