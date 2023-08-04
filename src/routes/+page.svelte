@@ -9,27 +9,12 @@
 		}
 		capital: {
 
-		}
+		},
+		cca3: string
 	}
 
 	let allCountries : Promise<Country[]> = fetch('https://restcountries.com/v3.1/all').then( (result) => result.json());
-
-	let selectedCountry :Country;
-	let additionalInfoVisible=false;
-	function handleAdditionalInformation(country : Country) 
-	{
-		return function(){
-			additionalInfoVisible = true;
-			if (additionalInfoVisible){
-				selectedCountry = country;
-			}
-		}
-	}
-
-	function handleReturn(){
-		additionalInfoVisible = false;
-	}
-
+	
 	async function filterCountries(filter: string)
 	{		
 		return (await allCountries).filter(country => country.name.common.toLowerCase().includes(filter.toLowerCase()));
@@ -48,14 +33,6 @@
 <div class="p-6 max-w-3xl mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4 my-7">
 	<div>
 		<div>
-			{#if additionalInfoVisible}
-			<div class="py-2">
-				<p class="text-2xl">{selectedCountry.name.common}</p>
-				<p class="text-m">({selectedCountry.name.official})</p>
-				<p class="text-m">Capital: {selectedCountry.capital}</p>
-				<button on:click="{handleReturn}">Return to overview</button>
-			</div>
-			{:else}
 			{#await countries then data}
 				<ul class="list-inside">
 					{#each data as country}
@@ -65,13 +42,12 @@
 								<p class="text-m">({country.name.official})</p>
 							</div>
 							<div class="py-2">
-								<img on:click={handleAdditionalInformation(country)} class="px-56" src={country.flags.png} alt=""/>
+								<a href={country.cca3}><img class="px-56" src={country.flags.png} alt=""/></a>
 							</div>
 						</li>
 					{/each}
 				</ul>
-			{/await}
-			{/if}
+			{/await}			
 		</div>
 	</div>
 </div>
