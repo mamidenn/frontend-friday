@@ -1,11 +1,9 @@
 import type { PageLoad } from './$types';
+import type { Country } from "$lib/country";
 
 export const load = (async ({ params }) => {
-	const allCountries = fetch('https://restcountries.com/v3.1/alpha/' + params.country).then(
+	const fetchedCountry = fetch('https://restcountries.com/v3.1/alpha/' + params.country).then(
 		(result) => result.json()
 	);
-	return {
-		cca3: params.country,
-		country: allCountries
-	};
+	return fetchedCountry as Country;
 }) satisfies PageLoad;

@@ -1,15 +1,5 @@
 <script lang="ts">
-	interface Country {
-		name: {
-			common: string;
-			official: string;
-		};
-		flags: {
-			png: string;
-		};
-		capital: {};
-		cca3: string;
-	}
+	import type { Country } from "$lib/country";
 
 	let allCountries: Promise<Country[]> = fetch('https://restcountries.com/v3.1/all').then(
 		(result) => result.json()
