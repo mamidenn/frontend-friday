@@ -3,12 +3,11 @@
 	
 	import type { PageData } from './$types';
 	export let data: PageData;
-	let country = data.country[0];
 </script>
 
 Hi from {data.cca3}
 
-{JSON.stringify(data.country)}
+{JSON.stringify(data)}
 
 <!--
 	TODO: Official Name

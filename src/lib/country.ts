@@ -44,5 +44,8 @@ export interface Country {
 	coatOfArms:{
 		png: URL;
 		svg: URL;
-	}
+	};
+    startOfWeek: "monday"|"sunday";
+    capitalInfo:{latlng: [number, number]};
+    pustalCode:{format: string, regex:RegExp};
 }
