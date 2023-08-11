@@ -19,7 +19,20 @@ export interface Country {
     region:string;
     subregion: string;
     languages: Record<string, string>;
-    
+	translations: Record<string, { official: string, common: string }>;
+	latlng: [number, number];
+	landlocked: boolean;
+	borders: string[];
+	area: number,
+	demonyms: Record<string, { f: string, m: string }>;
+	flag: string;
+	maps: {
+		googleMaps: URL,
+		openStreetMaps: URL
+	};
+	population: number;
+	gini: Record<string, number>;
+	
 	flags: {
 		png: string;
 	};
