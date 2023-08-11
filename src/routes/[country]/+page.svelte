@@ -1,13 +1,9 @@
 <script lang="ts">
-	
-	
 	import type { PageData } from './$types';
 	export let data: PageData;
 </script>
 
 Hi from {data.cca3}
-
-{JSON.stringify(data)}
 
 <!--
 	TODO: Official Name
@@ -24,15 +20,15 @@ Hi from {data.cca3}
 			<ul class="list-inside">
 				<li class="py-6 text-center font-medium">
 					<div class="py-2">
-						<p class="text-3xl">{country.name.official}</p>
-						<p class="text-2xl">{country.name.common}</p>
-						<p class="text-m">{country.region}</p>
-						<p class="text-m">{country.languages}</p>
-						<p class="text-m">{country.capital}</p>
-						<p class="text-m">{country.neighbours}</p>
+						<p class="text-3xl">{data.name.official}</p>
+						<p class="text-2xl">{data.name.common}</p>
+						<p class="text-m">{data.region}</p>
+						<p class="text-m">{data.languages}</p>
+						<p class="text-m">{data.capital}</p>
+						<p class="text-m">{data.borders}</p>
 					</div>
 					<div class="py-2">
-						<a href={country}><img class="px-56" src={country} alt="" /></a>
+						<a href={data}><img class="px-56" src={data} alt="" /></a>
 					</div>
 				</li>
 			</ul>
