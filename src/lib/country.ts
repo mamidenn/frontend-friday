@@ -32,8 +32,17 @@ export interface Country {
 	};
 	population: number;
 	gini: Record<string, number>;
-	
+	fifa: string;
+	car: { signs: string[], side: "left"|"right"};
+	timezones: string[];
+	continents: string[];
 	flags: {
-		png: string;
+		png: URL;
+		svg: URL;
+		alt: string;
 	};
+	coatOfArms:{
+		png: URL;
+		svg: URL;
+	}
 }
