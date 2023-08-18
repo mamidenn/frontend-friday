@@ -29,7 +29,7 @@ Hi from {data.cca3}
 						<p class="text-m">Borders: {data.borders}</p>
 					</div>
 					<div class="py-2">
-						<a href={data}><img class="px-56" src={data} alt="" /></a>
+						<img class="px-56" src={data.flags.svg.toString()} alt="" />
 					</div>
 				</li>
 			</ul>

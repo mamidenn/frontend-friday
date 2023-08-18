@@ -47,5 +47,5 @@ export interface Country {
 	};
     startOfWeek: "monday"|"sunday";
     capitalInfo:{latlng: [number, number]};
-    pustalCode:{format: string, regex:RegExp};
+    postalCode:{format: string, regex:RegExp};
 }
