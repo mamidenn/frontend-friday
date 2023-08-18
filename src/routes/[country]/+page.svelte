@@ -23,7 +23,8 @@ Hi from {data.cca3}
 						<p class="text-3xl">{data.name.official}</p>
 						<p class="text-2xl">{data.name.common}</p>
 						<p class="text-m">{data.region}</p>
-						<p class="text-m">{data.languages}</p>
+						<p class="text-m">{Object.values(data.languages)}
+						</p>
 						<p class="text-m">{data.capital}</p>
 						<p class="text-m">{data.borders}</p>
 					</div>
