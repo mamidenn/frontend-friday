@@ -23,10 +23,14 @@ Hi from {data.cca3}
 						<p class="text-3xl">{data.name.official}</p>
 						<p class="text-2xl">{data.name.common}</p>
 						<p class="text-m">Region: {data.region}</p>
-						<p class="text-m">Languages: {Object.values(data.languages).join(", ")}
-						</p>
+						<p class="text-m">Languages: {Object.values(data.languages).join(', ')}</p>
 						<p class="text-m">Capital: {data.capital}</p>
-						<p class="text-m">Borders: {data.borders}</p>
+						<p class="text-m">
+							Borders:
+							{#each data.borders as neighbor}
+								<a href="">{neighbor}</a><p> </p>
+							{/each}
+						</p>
 					</div>
 					<div class="py-2">
 						<img class="px-56" src={data.flags.svg.toString()} alt="" />
