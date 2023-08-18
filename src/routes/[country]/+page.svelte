@@ -28,7 +28,7 @@ Hi from {data.cca3}
 						<p class="text-m">
 							Borders:
 							{#each data.borders as neighbor}
-								<a href="">{neighbor}</a><p> </p>
+								<span><a href="{neighbor}">{neighbor}</a> </span>
 							{/each}
 						</p>
 					</div>
