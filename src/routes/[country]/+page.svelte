@@ -1,18 +1,17 @@
 <script lang="ts">
+	import type { Country } from '$lib/country';
 	import type { PageData } from './$types';
 	export let data: PageData;
+
+	async function getCountry(countryShortcut : string) : Promise<string>
+	{
+		const fetchedCountry = fetch('https://restcountries.com/v3.1/alpha/' + countryShortcut).then(
+			(result) => result.json()
+		);
+		return ((await fetchedCountry)[0] as Country).name.official;
+	}
+	
 </script>
-
-Hi from {data.cca3}
-
-<!--
-	TODO: Official Name
-		  Common Name
-		  Region
-		  Languages in english
-		  Capital
-		  Neighbours
--->
 
 <div class="mx-auto my-7 flex max-w-3xl items-center space-x-4 rounded-xl bg-white p-6 shadow-lg">
 	<div>
@@ -28,7 +27,7 @@ Hi from {data.cca3}
 						<p class="text-m">
 							Borders:
 							{#each data.borders as neighbor}
-								<span><a href="{neighbor}">{neighbor}</a> </span>
+								<span><a href="{neighbor}">{getCountry(neighbor)}</a> </span>
 							{/each}
 						</p>
 					</div>
