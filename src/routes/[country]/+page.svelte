@@ -4,7 +4,7 @@
 	export let data: PageData;
 
 	async function getCountry(countryShortcut : string) : Promise<string>
-	{
+	{ 
 		const fetchedCountry = fetch('https://restcountries.com/v3.1/alpha/' + countryShortcut).then(
 			(result) => result.json()
 		);
@@ -27,7 +27,9 @@
 						<p class="text-m">
 							Borders:
 							{#each data.borders as neighbor}
-								<span><a href="{neighbor}">{getCountry(neighbor)}</a> </span>
+								{#await getCountry(neighbor) then countryName}
+									<span><a href="{neighbor}">{countryName}</a> </span>
+								{/await}
 							{/each}
 						</p>
 					</div>
