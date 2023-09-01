@@ -3,25 +3,12 @@
 	import type { PageData } from './$types';
 	export let data: PageData;
 
-	async function getCountry(countryShortcut : string) : Promise<string>
-	{ 
+	async function getCountry(countryShortcut: string): Promise<string> {
 		const fetchedCountry = fetch('https://restcountries.com/v3.1/alpha/' + countryShortcut).then(
 			(result) => result.json()
 		);
 		return ((await fetchedCountry)[0] as Country).name.official;
 	}
-
-	console.log("batman")
-
-	if (data===null || data.borders===null || data.borders===undefined  )
-	{
-		console.log("null")	
-	}
-	else
-	{
-		console.log(data.borders)
-	}
-	
 </script>
 
 <div class="mx-auto my-7 flex max-w-3xl items-center space-x-4 rounded-xl bg-white p-6 shadow-lg">
@@ -35,14 +22,16 @@
 						<p class="text-m">Region: {data.region}</p>
 						<p class="text-m">Languages: {Object.values(data.languages).join(', ')}</p>
 						<p class="text-m">Capital: {data.capital}</p>
-						<p class="text-m">
-							Borders:
-							{#each data.borders as neighbor}
-								{#await getCountry(neighbor) then countryName}
-									<span><a href="{neighbor}">{countryName}</a> </span>
-								{/await}
-							{/each}
-						</p>
+						{#if data.borders}
+							<p class="text-m">
+								Borders:
+								{#each data.borders as neighbor}
+									{#await getCountry(neighbor) then countryName}
+										<span><a href={neighbor}>{countryName}</a> </span>
+									{/await}
+								{/each}
+							</p>
+						{/if}
 					</div>
 					<div class="py-2">
 						<img class="px-56" src={data.flags.svg.toString()} alt="" />

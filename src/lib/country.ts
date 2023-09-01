@@ -22,8 +22,8 @@ export interface Country {
 	translations: Record<string, { official: string, common: string }>;
 	latlng: [number, number];
 	landlocked: boolean;
-	borders: string[];
-	area: number,
+	borders?: string[];
+	area: number;
 	demonyms: Record<string, { f: string, m: string }>;
 	flag: string;
 	maps: {
