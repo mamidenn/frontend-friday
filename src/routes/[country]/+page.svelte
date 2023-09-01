@@ -12,7 +12,15 @@
 	}
 
 	console.log("batman")
-	console.log(data.borders)
+
+	if (data===null || data.borders===null || data.borders===undefined  )
+	{
+		console.log("null")	
+	}
+	else
+	{
+		console.log(data.borders)
+	}
 	
 </script>
 
