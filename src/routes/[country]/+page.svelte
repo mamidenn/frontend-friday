@@ -10,6 +10,9 @@
 		);
 		return ((await fetchedCountry)[0] as Country).name.official;
 	}
+
+	console.log("batman")
+	console.log(data.borders)
 	
 </script>
 
