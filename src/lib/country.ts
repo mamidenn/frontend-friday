@@ -1,3 +1,8 @@
+export interface DataModelCountry {
+	rawCountry: Country;
+	bordersAsFullName? : string[];
+}
+
 export interface Country {
 	name: {
 		common: string;
