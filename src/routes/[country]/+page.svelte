@@ -3,6 +3,7 @@
 	import type { PageData } from './$types';
 	export let data: PageData;
 
+
 	async function getCountry(countryShortcut: string): Promise<string> {
 		const fetchedCountry = fetch('https://restcountries.com/v3.1/alpha/' + countryShortcut).then(
 			(result) => result.json()
@@ -17,15 +18,15 @@
 			<ul class="list-inside">
 				<li class="py-6 text-center font-medium">
 					<div class="py-2">
-						<p class="text-3xl">{data.name.official}</p>
-						<p class="text-2xl">{data.name.common}</p>
-						<p class="text-m">Region: {data.region}</p>
-						<p class="text-m">Languages: {Object.values(data.languages).join(', ')}</p>
-						<p class="text-m">Capital: {data.capital}</p>
-						{#if data.borders}
+						<p class="text-3xl">{data.rawCountry.name.official}</p>
+						<p class="text-2xl">{data.rawCountry.name.common}</p>
+						<p class="text-m">Region: {data.rawCountry.region}</p>
+						<p class="text-m">Languages: {Object.values(data.rawCountry.languages).join(', ')}</p>
+						<p class="text-m">Capital: {data.rawCountry.capital}</p>
+						{#if data.rawCountry.borders}
 							<p class="text-m">
 								Borders:
-								{#each data.borders as neighbor}
+								{#each data.rawCountry.borders as neighbor}
 									{#await getCountry(neighbor) then countryName}
 										<span><a href={neighbor}>{countryName}</a> </span>
 									{/await}
@@ -34,7 +35,7 @@
 						{/if}
 					</div>
 					<div class="py-2">
-						<img class="px-56" src={data.flags.svg.toString()} alt="" />
+						<img class="px-56" src={data.rawCountry.flags.svg.toString()} alt="" />
 					</div>
 				</li>
 			</ul>
