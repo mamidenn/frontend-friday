@@ -3,13 +3,6 @@
 	import type { PageData } from './$types';
 	export let data: PageData;
 
-
-	async function getCountry(countryShortcut: string): Promise<string> {
-		const fetchedCountry = fetch('https://restcountries.com/v3.1/alpha/' + countryShortcut).then(
-			(result) => result.json()
-		);
-		return ((await fetchedCountry)[0] as Country).name.official;
-	}
 </script>
 
 <div class="mx-auto my-7 flex max-w-3xl items-center space-x-4 rounded-xl bg-white p-6 shadow-lg">
