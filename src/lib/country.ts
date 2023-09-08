@@ -12,7 +12,7 @@ export async function getCountry(
 }
 
 if (import.meta.vitest) {
-	const { describe, it, expect, expectTypeOf } = import.meta.vitest;
+	const { describe, it, expect, expectTypeOf, assertType } = import.meta.vitest;
 
 	describe('getCountry', () => {
 		it.each([
@@ -25,7 +25,7 @@ if (import.meta.vitest) {
 		});
 
 		it('gets only the specified fields', async () => {
-			const actual = await getCountry('DEU', ['name', 'borders']);
+			const actual = await getCountry('DEU', 'name', 'borders');
 
 			expect(actual).toBe({
 				name: {
@@ -41,6 +41,11 @@ if (import.meta.vitest) {
 				borders: ['AUT', 'BEL', 'CZE', 'DNK', 'FRA', 'LUX', 'NLD', 'POL', 'CHE']
 			});
 		});
+
+		it("only allows specifying fields that belong to type Country", ()=>{
+			// @ts-expect-error president is not property of Country
+			assertType(getCountry("USA", "president"))
+		})
 
 		it('has a return type that only contains the specified fields', async () => {
 			const actual = await getCountry('DEU', ['cca2', 'region', 'independent']);
