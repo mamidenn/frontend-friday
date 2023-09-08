@@ -8,7 +8,8 @@ export async function getCountry(
 	//TODO:
 	const result = await fetch('https://restcountries.com/v3.1/alpha/' + code + "?fields=" + fields.join(","));
 	const json = await result.json();
-	return json[0];
+	console.log(json);
+	return json;
 }
 
 if (import.meta.vitest) {
