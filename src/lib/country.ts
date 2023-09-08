@@ -6,7 +6,7 @@ export async function getCountry(
 	...fields: /*TODO:*/ unknown[]
 ): Promise</*TODO:*/ Country> {
 	//TODO:
-	const result = await fetch('https://restcountries.com/v3.1/alpha/' + code);
+	const result = await fetch('https://restcountries.com/v3.1/alpha/' + code + "?fields=" + fields.join(","));
 	const json = await result.json();
 	return json[0];
 }
