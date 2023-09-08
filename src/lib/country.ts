@@ -3,13 +3,13 @@
 
 export async function getCountry(
 	code: string,
-	...fields: /*TODO:*/ unknown[]
+	...fields: (keyof Country)[]
 ): Promise</*TODO:*/ Country> {
 	//TODO:
 	const result = await fetch('https://restcountries.com/v3.1/alpha/' + code + "?fields=" + fields.join(","));
 	const json = await result.json();
 	console.log(json);
-	if (fields.length==0)
+	if (fields.length===0) // TODO refactor
 	{
 		return json[0];
 	}
@@ -56,7 +56,7 @@ if (import.meta.vitest) {
 		})
 
 		it('has a return type that only contains the specified fields', async () => {
-			const actual = await getCountry('DEU', ['cca2', 'region', 'independent']);
+			const actual = await getCountry('DEU', 'cca2', 'region', 'independent');
 
 			expectTypeOf(actual).toMatchTypeOf<{
 				cca2: string;
