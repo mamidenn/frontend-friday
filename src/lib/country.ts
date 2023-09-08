@@ -9,7 +9,14 @@ export async function getCountry(
 	const result = await fetch('https://restcountries.com/v3.1/alpha/' + code + "?fields=" + fields.join(","));
 	const json = await result.json();
 	console.log(json);
-	return json;
+	if (fields.length==0)
+	{
+		return json[0];
+	}
+	else
+	{
+		return json;
+	}
 }
 
 if (import.meta.vitest) {
@@ -28,7 +35,7 @@ if (import.meta.vitest) {
 		it('gets only the specified fields', async () => {
 			const actual = await getCountry('DEU', 'name', 'borders');
 
-			expect(actual).toBe({
+			expect(actual).toStrictEqual({
 				name: {
 					common: 'Germany',
 					official: 'Federal Republic of Germany',
