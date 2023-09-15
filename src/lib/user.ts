@@ -32,9 +32,9 @@ import fetch from 'node-fetch';
  */
 export const getUser = async function (...fields) {
 	// please do not change the seed, the tests depend on it
-	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday');
+	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday&' + "inc=" +fields);
 	const json = (await response.json()) as UserApiResult;
-	return json.results[0].name;
+	return json.results[0];
 };
 
 export interface UserApiResult {
