@@ -34,7 +34,7 @@ export const getUser = async function (...fields) {
 	// please do not change the seed, the tests depend on it
 	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday');
 	const json = (await response.json()) as UserApiResult;
-	return json.results[0];
+	return json.results[0].name;
 };
 
 export interface UserApiResult {
