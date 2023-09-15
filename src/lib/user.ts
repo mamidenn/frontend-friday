@@ -30,11 +30,11 @@ import fetch from 'node-fetch';
  * https://randomuser.me/api/?inc=gender,name,nat
  * ```
  */
-export const getUser = async function<T> (...fields:  T[]) {
+export const getUser = async function <T extends keyof User>(...fields: T[]) {
 	// please do not change the seed, the tests depend on it
-	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday&' + "inc=" +fields);
+	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday&' + 'inc=' + fields);
 	const json = (await response.json()) as UserApiResult;
-	return json.results[0] as Pick<T, typeof fields>;
+	return json.results[0] as Pick<User, typeof fields>;
 };
 
 export interface UserApiResult {
