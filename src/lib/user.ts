@@ -30,7 +30,7 @@ import fetch from 'node-fetch';
  * https://randomuser.me/api/?inc=gender,name,nat
  * ```
  */
-export const getUser = async function (...fields) {
+export const getUser = async function (...fields: (keyof User)[]) {
 	// please do not change the seed, the tests depend on it
 	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday&' + "inc=" +fields);
 	const json = (await response.json()) as UserApiResult;
