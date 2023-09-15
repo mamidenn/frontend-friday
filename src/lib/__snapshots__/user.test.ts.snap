@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`getUser > returns a single random user 1`] = `
+{
+  "cell": "06-96-21-80-09",
+  "dob": {
+    "age": 66,
+    "date": "1957-02-10T12:12:14.050Z",
+  },
+  "email": "gaspard.jean@example.com",
+  "gender": "male",
+  "id": {
+    "name": "INSEE",
+    "value": "1570185270955 82",
+  },
+  "location": {
+    "city": "Nîmes",
+    "coordinates": {
+      "latitude": "-17.3178",
+      "longitude": "-49.9042",
+    },
+    "country": "France",
+    "postcode": 74133,
+    "state": "Ariège",
+    "street": {
+      "name": "Rue de L'Abbé-Groult",
+      "number": 7210,
+    },
+    "timezone": {
+      "description": "Pacific Time (US & Canada)",
+      "offset": "-8:00",
+    },
+  },
+  "login": {
+    "md5": "8f7ee1c713065e5e6f076bd0cacf65e6",
+    "password": "crusher",
+    "salt": "OmkZGgA8",
+    "sha1": "94b43e8dc8dbf369affb967b15b699a9131d6500",
+    "sha256": "56d5a11758d681371b3a91bf3f8f60a38d48c731b71af19198ed0b687eeaccfd",
+    "username": "heavysnake221",
+    "uuid": "572b8a1b-a32d-4816-b47d-23bd3449ddb8",
+  },
+  "name": {
+    "first": "Gaspard",
+    "last": "Jean",
+    "title": "Mr",
+  },
+  "nat": "FR",
+  "phone": "02-32-58-87-55",
+  "picture": {
+    "large": "https://randomuser.me/api/portraits/men/86.jpg",
+    "medium": "https://randomuser.me/api/portraits/med/men/86.jpg",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/86.jpg",
+  },
+  "registered": {
+    "age": 7,
+    "date": "2016-07-10T13:27:18.462Z",
+  },
+}
+`;
