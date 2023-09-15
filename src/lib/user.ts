@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 /**
  * # Including/Excluding fields
  *
@@ -31,7 +33,7 @@
 export const getUser = async function (...fields) {
 	// please do not change the seed, the tests depend on it
 	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday');
-	const json: UserApiResult = await response.json();
+	const json = (await response.json()) as UserApiResult;
 	return json.results[0];
 };
 
