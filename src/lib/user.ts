@@ -103,8 +103,8 @@ export interface Location {
 }
 
 export interface Coordinates {
-	latitude: string;
-	longitude: string;
+	latitude: number;
+	longitude: number;
 }
 
 export interface Street {

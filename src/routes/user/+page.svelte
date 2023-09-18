@@ -1,8 +1,10 @@
 <script lang="ts">
+	import OpenStreetMap from '$lib/components/OpenStreetMap.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 	$: ({ user } = data);
+	$: ({ coordinates } = user.location);
 </script>
 
 <svelte:head>
@@ -38,6 +40,18 @@
 		<td>{user.dob.date.toDateString()} ({user.dob.age})</td>
 	</tr>
 </table>
+
+<div class="h-96">
+	<OpenStreetMap
+		{coordinates}
+		markerStyle={{
+			'circle-radius': 10,
+			'circle-stroke-color': [255, 0, 127],
+			'circle-stroke-width': 2
+		}}
+		zoom={12}
+	/>
+</div>
 
 <style lang="postcss">
 </style>
