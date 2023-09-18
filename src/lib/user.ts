@@ -32,7 +32,8 @@ import fetch from 'node-fetch';
  */
 export const getUser = async function <T extends keyof User>(...fields: T[]) {
 	// please do not change the seed, the tests depend on it
-	const response = await fetch('https://randomuser.me/api/?seed=frontendfriday&inc=' + fields);
+	const seed = import.meta.env.MODE === "test" ? "frontendfriday" : ""
+	const response = await fetch(`https://randomuser.me/api/?seed=${seed}&inc=${fields}`);
 	const json = (await response.json()) as UserApiResult;
 	return json.results[0] as Pick<User, T>;
 };
