@@ -5,7 +5,7 @@ exports[`getUser > returns a single random user 1`] = `
   "cell": "06-96-21-80-09",
   "dob": {
     "age": 66,
-    "date": "1957-02-10T12:12:14.050Z",
+    "date": 1957-02-10T12:12:14.050Z,
   },
   "email": "gaspard.jean@example.com",
   "gender": "male",
@@ -54,7 +54,7 @@ exports[`getUser > returns a single random user 1`] = `
   },
   "registered": {
     "age": 7,
-    "date": "2016-07-10T13:27:18.462Z",
+    "date": 2016-07-10T13:27:18.462Z,
   },
 }
 `;

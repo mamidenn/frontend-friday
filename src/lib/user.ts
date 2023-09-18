@@ -41,12 +41,22 @@ export const getUser = async function <T extends keyof User>(
 		typeof fieldOrFetch === 'function' ? fieldOrFetch : (await import('node-fetch')).default;
 
 	const response = await fetch(`https://randomuser.me/api/?seed=${seed}&inc=${fields}`);
-	const json = (await response.json()) as UserApiResult;
-	return json.results[0] as Pick<User, T>;
+	const json = (await response.json()) as UserApiResult<T>;
+	const user = json.results[0];
+	if (isPicked("dob", user)) user.dob.date = new Date(user.dob.date);
+	if (isPicked('registered', user)) user.registered.date = new Date(user.registered.date);
+	return user;
 };
 
-export interface UserApiResult {
-	results: User[];
+const isPicked = function <TKey extends keyof T, T, K extends keyof T>(
+	key: TKey,
+	obj: Pick<T, K>
+): obj is Pick<T, K | TKey> {
+	return key in obj;
+};
+
+export interface UserApiResult<T extends keyof User> {
+	results: Pick<User, T>[];
 	info: Info;
 }
 
