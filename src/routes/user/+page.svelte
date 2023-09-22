@@ -11,47 +11,53 @@
 	<title>User</title>
 </svelte:head>
 
-<img
-	src={user.picture.large}
-	alt="A picture of {user.name.title} {user.name.first} {user.name.last}"
-/>
 
-<h2>{user.name.title} {user.name.first} {user.name.last}</h2>
+<div class="bg-slate-500 rounded-xl p-5 m-10">
+	<div>
+		<img
+			src={user.picture.large}
+			alt="A picture of {user.name.title} {user.name.first} {user.name.last}"
+		/>
+	</div>
 
-<table>
-	<tr>
-		<th>Location</th>
-		<td>{user.location.city}, {user.location.state}, {user.location.country}</td>
-	</tr>
-	<tr>
-		<th>Email</th>
-		<td>{user.email}</td>
-	</tr>
-	<tr>
-		<th>Phone</th>
-		<td>{user.phone}</td>
-	</tr>
-	<tr>
-		<th>Mobile</th>
-		<td>{user.cell}</td>
-	</tr>
-	<tr>
-		<th>Date Of Birth</th>
-		<td>{user.dob.date.toDateString()} ({user.dob.age})</td>
-	</tr>
-</table>
+	<h2>{user.name.title} {user.name.first} {user.name.last}</h2>
 
-<div class="h-96">
-	<OpenStreetMap
-		{coordinates}
-		markerStyle={{
-			'circle-radius': 10,
-			'circle-stroke-color': [255, 0, 127],
-			'circle-stroke-width': 2
-		}}
-		zoom={12}
-	/>
+	<table>
+		<tr>
+			<th>Location</th>
+			<td>{user.location.city}, {user.location.state}, {user.location.country}</td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td>{user.email}</td>
+		</tr>
+		<tr>
+			<th>Phone</th>
+			<td>{user.phone}</td>
+		</tr>
+		<tr>
+			<th>Mobile</th>
+			<td>{user.cell}</td>
+		</tr>
+		<tr>
+			<th>Date Of Birth</th>
+			<td>{user.dob.date.toDateString()} ({user.dob.age})</td>
+		</tr>
+	</table>
+
+	<div class="h-96">
+		<OpenStreetMap
+			{coordinates}
+			markerStyle={{
+				'circle-radius': 10,
+				'circle-stroke-color': [255, 0, 127],
+				'circle-stroke-width': 2
+			}}
+			zoom={12}
+		/>
+	</div>
 </div>
+
 
 <style lang="postcss">
 </style>
