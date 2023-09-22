@@ -12,7 +12,8 @@
 </svelte:head>
 
 
-<div class="bg-slate-500 rounded-xl p-5 m-10">
+<div class="bg-slate-500 rounded-xl p-5 m-10 flex flex-col justify-center text-white">
+	<h2>{user.name.title} {user.name.first} {user.name.last}</h2>
 	<div>
 		<img
 			src={user.picture.large}
@@ -20,8 +21,7 @@
 		/>
 	</div>
 
-	<h2>{user.name.title} {user.name.first} {user.name.last}</h2>
-
+<div>
 	<table>
 		<tr>
 			<th>Location</th>
@@ -44,6 +44,8 @@
 			<td>{user.dob.date.toDateString()} ({user.dob.age})</td>
 		</tr>
 	</table>
+</div>
+	
 
 	<div class="h-96">
 		<OpenStreetMap
