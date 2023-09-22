@@ -60,4 +60,8 @@
 </div>
 
 <style lang="postcss">
+	th {
+		@apply text-left;
+		@apply pr-6;
+	}
 </style>
