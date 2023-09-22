@@ -12,9 +12,9 @@
 </svelte:head>
 
 <div class="m-10 justify-center rounded-xl bg-slate-500 p-5 text-white">
-	<h2 class="">{user.name.title} {user.name.first} {user.name.last}</h2>
+	<h2 class="text-center mb-5 text-4xl">{user.name.title} {user.name.first} {user.name.last}</h2>
 	<div class="flex flex-row gap-10">
-		<div class="">
+		<div class="flex flex-col">
 			<img
 				src={user.picture.large}
 				alt="A picture of {user.name.title} {user.name.first} {user.name.last}"
