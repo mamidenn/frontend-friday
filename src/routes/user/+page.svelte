@@ -13,7 +13,7 @@
 
 <div class="m-10 justify-center rounded-xl bg-slate-500 p-5 text-white">
 	<h2 class="">{user.name.title} {user.name.first} {user.name.last}</h2>
-	<div class="flex flex-row">
+	<div class="flex flex-row gap-10">
 		<div class="">
 			<img
 				src={user.picture.large}
@@ -21,7 +21,7 @@
 			/>
 		</div>
 
-		<div class="flex flex-col">
+		<div class="flex flex-col ml-5">
 			<table>
 				<tr>
 					<th>Location</th>
@@ -45,18 +45,17 @@
 				</tr>
 			</table>
 		</div>
-
-		<div class="h-96 w-80">
-			<OpenStreetMap
-				{coordinates}
-				markerStyle={{
-					'circle-radius': 10,
-					'circle-stroke-color': [255, 0, 127],
-					'circle-stroke-width': 2
-				}}
-				zoom={12}
-			/>
-		</div>
+	</div>
+	<div class="h-96 mt-5">
+		<OpenStreetMap
+			{coordinates}
+			markerStyle={{
+				'circle-radius': 10,
+				'circle-stroke-color': [255, 0, 127],
+				'circle-stroke-width': 2
+			}}
+			zoom={12}
+		/>
 	</div>
 </div>
 
