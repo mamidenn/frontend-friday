@@ -2,8 +2,8 @@
 </script>
 
 <div class="container mx-auto">
-	<div class="item flex flex-row  justify-center">
-		<div class="left flex flex-col">
+	<div class="item flex flex-row justify-center text-center">
+		<div class="left flex basis-3/4 flex-col">
 			<div class="header"><h2 class="text-2xl font-bold">Lorem, ipsum.</h2></div>
 			<div class="text">
 				<p>
@@ -12,7 +12,7 @@
 					beatae dignissimos iste, fugiat laudantium nulla atque quae!
 				</p>
 			</div>
-			<div class="spacer"/>
+			<div class="spacer" />
 		</div>
 		<div class="right flex flex-col">
 			<img
