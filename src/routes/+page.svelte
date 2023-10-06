@@ -2,8 +2,8 @@
 </script>
 
 <div class="container mx-auto">
-	<div class="item">
-		<div class="left">
+	<div class="item flex flex-row">
+		<div class="left flex flex-col">
 			<div class="header"><h2>Lorem, ipsum.</h2></div>
 			<div class="text">
 				<p>
@@ -14,12 +14,12 @@
 			</div>
 			<div class="spacer"/>
 		</div>
-		<div class="right">
+		<div class="right flex flex-col">
 			<img
 				alt="A paper bag with flowers and a white pumpkin"
 				src="https://images.unsplash.com/photo-1695446635028-f301e352f06a?w=600&q=80"
 			/>
-			<div class="attribution">
+			<div class="attribution flex flex-row">
 				<span>A paper bag with flowers and a white pumpkin</span>
 				<span>Megan Nixon</span>
 				<a
