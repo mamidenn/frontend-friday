@@ -1,9 +1,9 @@
 <script lang="ts">
 </script>
 
-<div class="container mx-auto border-blue-200 border-4">
-	<div class="item flex flex-row gap-8 ">
-		<div class="left flex basis-3/4 flex-col justify-evenly text-center">
+<div class="container mx-auto">
+	<div class="item flex flex-row gap-8 border-red-500">
+		<div class="left flex basis-3/4 flex-col justify-evenly items-center text-center border-red-500">
 			<div class="header"><h2 class="text-2xl font-bold">Lorem, ipsum.</h2></div>
 			<div class="text">
 				<p>
@@ -14,12 +14,12 @@
 			</div>
 			<div class="spacer" />
 		</div>
-		<div class="right flex flex-col">
+		<div class="right flex flex-col border-red-500">
 			<img
 				alt="A paper bag with flowers and a white pumpkin"
 				src="https://images.unsplash.com/photo-1695446635028-f301e352f06a?w=600&q=80"
 			/>
-			<div class="attribution flex flex-row items-center justify-between ">
+			<div class="attribution flex flex-row items-center justify-between border-red-500">
 				<span>A paper bag with flowers and a white pumpkin</span>
 				<span>Megan Nixon</span>
 				<a
@@ -34,7 +34,6 @@
 
 <style lang="postcss">
 	div {
-		left:2; 
-		width:2;
+		@apply border m-2;
 	}
 </style>
