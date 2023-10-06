@@ -2,9 +2,9 @@
 </script>
 
 <div class="container mx-auto">
-	<div class="item flex flex-row text-center">
+	<div class="item flex flex-row gap-8 text-center">
 		<div class="left flex basis-3/4 flex-col justify-evenly">
-			<div class="header"><h2 class="text-2xl font-bold ">Lorem, ipsum.</h2></div>
+			<div class="header"><h2 class="text-2xl font-bold">Lorem, ipsum.</h2></div>
 			<div class="text">
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel facere aspernatur, sapiente
@@ -19,7 +19,7 @@
 				alt="A paper bag with flowers and a white pumpkin"
 				src="https://images.unsplash.com/photo-1695446635028-f301e352f06a?w=600&q=80"
 			/>
-			<div class="attribution flex flex-row justify-between text-start">
+			<div class="attribution flex flex-row items-center justify-between text-start">
 				<span>A paper bag with flowers and a white pumpkin</span>
 				<span>Megan Nixon</span>
 				<a
