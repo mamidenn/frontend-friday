@@ -10,11 +10,13 @@
 
 	let darkMode = false;
 	let bodyElement: HTMLElement | null;
+
 	if (browser) {
 		bodyElement = document.body;
 	}
 	$: if (darkMode) {
 		bodyElement?.classList.add('dark');
+
 	} else {
 		bodyElement?.classList.remove('dark');
 	}
@@ -23,6 +25,7 @@
 <label>
 	<input type="checkbox" bind:checked={darkMode} />
 	Dark mode
-	<input type="checkbox" />
-	Dark mode off
+	<div class="w-48 bg-blue-900">
+	<div id="circle" class="rounded-full bg-cyan-600 w-10 h-10" />
+	</div>
 </label>
