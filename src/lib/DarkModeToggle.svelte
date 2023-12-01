@@ -5,9 +5,12 @@
 	//    [()  ]   <=>   [  ()]
 	// 3. use interaction with the toggle switch to control the checkbox
 	// 4. hide the checkbox
+
+	let darkMode = false;
 </script>
 
 <label>
-	<input type="checkbox" />
+	<input type="checkbox" bind:checked={darkMode} />
 	Dark mode
+	{darkMode}
 </label>
