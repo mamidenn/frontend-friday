@@ -9,9 +9,9 @@
 	// 4. hide the checkbox
 
 	let darkMode = false;
-	let bodyElement;
+	let bodyElement: HTMLElement | null;
 	if (browser) {
-		bodyElement = document.getElementById('bodyId');
+		bodyElement = document.body;
 	}
 	$: if (darkMode) {
 		bodyElement?.classList.add('dark');
@@ -23,5 +23,6 @@
 <label>
 	<input type="checkbox" bind:checked={darkMode} />
 	Dark mode
-	{darkMode}
+	<input type="checkbox" />
+	Dark mode off
 </label>
